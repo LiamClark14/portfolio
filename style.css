@@ -132,6 +132,10 @@ html {
   align-self: center;
   justify-self: center;
   opacity: 0.5;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: left 2s, top 2s;
 }
 
 .circle-1 {
@@ -173,6 +177,10 @@ html {
 .main-circle img {
   filter: saturate(200%);
   mix-blend-mode:exclusion;
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: left 2s, top 2s;
 }
 /* End of Animated Circles */
 
@@ -184,6 +192,9 @@ html {
   width: 0;
   word-wrap: break-word;
   line-height: 3.5;
+  position: sticky;
+  top: 0;
+
 }
 
 .featured-text-1 {
