@@ -137,6 +137,7 @@ html {
   top: 0;
   left: 0;
   transition: left 2s, top 2s;
+  transition: width .5s, height .5s opacity .5s;
 }
 
 .circle-1 {
@@ -145,6 +146,11 @@ html {
   background-clip: content-box;
   border: .5rem dotted #a14b1a;
   margin-left: -10rem;
+}
+.circle:hover {
+  width: 23rem;
+  height: 23rem;
+  opacity: 1;
 }
 .circle-2 {
   background: url("images/landing/circle-2-img.jpg") center;
@@ -172,8 +178,8 @@ html {
 
 
 .main-circle {
-  width: 50rem;
-  height: 50rem;
+  width: 40rem;
+  height: 40rem;
   position: absolute;
   overflow: hidden;
   border-radius: 50%;
@@ -181,11 +187,11 @@ html {
 }
 
 .main-circle:hover {
-  width: 60rem;
-  height: 60rem;
+  width: 50rem;
+  height: 50rem;
 }
 .main-circle img {
-  filter: saturate(200%);
+  filter: grayscale(100);
   mix-blend-mode:exclusion;
   position: relative;
   top: 0;
@@ -225,6 +231,8 @@ html {
   background-color: #9b0e0e;
   border-radius: 50%;
   border: 0.2rem dotted #fff;
+  padding: 0.1rem;
+  overflow: hidden;
 }
 
 .main-btn-content {
@@ -233,6 +241,13 @@ html {
   border: 0.2rem dotted #e7be08;
   border-radius: 50%;
   transform: rotate(40deg);
+  transition: transform 0.2s, border 0.2s;
+}
+
+.main-btn:hover .main-btn-content{
+  transform: rotate(60deg);
+  border: 0.2rem dotted #9b0e0e;
+  transition: transform 0.2s 0.3s, border 0.2s;
 }
 
 .main-btn-line {
@@ -267,6 +282,27 @@ html {
   font-size: 1.1rem;
   font-weight: 600;
   text-transform: uppercase;
+}
+
+.ripple {
+  position: absolute;
+  width: 0;
+  height: 0;
+  background-color: #e7be08;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: rippleAnim 0.5s forwards;
+}
+
+@keyframes rippleAnim {
+  0% {
+    width: 0;
+    height: 0;
+  }
+  100% {
+    width: 205%;
+    height: 205%;
+  }
 }
 /* End of Main Button */
 /* End of Section 1 */
